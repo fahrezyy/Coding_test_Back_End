@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit bootstrap="vendor/autoload.php">
     <testsuites>
@@ -6,13 +5,4 @@
             <directory>tests</directory>
         </testsuite>
     </testsuites>
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="vendor/autoload.php">
-    <testsuites>
-        <testsuite name="Aplikasi Test Suite">
-            <directory>tests</directory>
-        </testsuite>
-    </testsuites>
->>>>>>> 4bc605eb6df8eb0dc3a7a516e1ef8545973828a8
 </phpunit>
