@@ -108,4 +108,24 @@ class ProductTest extends TestCase
         $count = $this->pdo->query("SELECT COUNT(*) FROM products WHERE name = 'Yamaha BB-434M Electric Bass'")->fetchColumn();
         $this->assertEquals(0, $count);
     }
+
+    // 6. Test Fitur Statistik Produk Real-Time
+    public function testGetProductStats()
+    {
+        // Masukkan data dummy dengan status berbeda
+        $this->pdo->exec("INSERT INTO products (name, description, price, category, status) VALUES 
+            ('Gitar A', 'Test', 1000000, 'Gitar', 'tersedia'),
+            ('Gitar B', 'Test', 1500000, 'Gitar', 'habis')
+        ");
+
+        // Hitung total dan status menggunakan query yang sama dengan endpoint stats
+        $total = $this->pdo->query("SELECT COUNT(*) FROM products")->fetchColumn();
+        $tersedia = $this->pdo->query("SELECT COUNT(*) FROM products WHERE status = 'tersedia'")->fetchColumn();
+        $habis = $this->pdo->query("SELECT COUNT(*) FROM products WHERE status = 'habis'")->fetchColumn();
+
+        // Lakukan assertion (pemeriksaan hasil)
+        $this->assertEquals(2, $total);
+        $this->assertEquals(1, $tersedia);
+        $this->assertEquals(1, $habis);
+    }
 }
