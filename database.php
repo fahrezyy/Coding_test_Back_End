@@ -23,13 +23,16 @@ try {
         role TEXT NOT NULL
     )");
 
-    // Cek apakah data products kosong, isi data dummy
+    // Cek apakah data products kosong, isi data dummy alat musik sesuai database Anda
     $stmt = $pdo->query("SELECT COUNT(*) FROM products");
     if ($stmt->fetchColumn() == 0) {
         $pdo->exec("INSERT INTO products (name, description, price, category, status) VALUES 
-            ('Laptop ASUS ROG', 'Laptop gaming performa tinggi dengan kartu grafis RTX', 15000000, 'Elektronik', 'tersedia'),
-            ('Mouse Wireless Logitech', 'Mouse ergonomis dengan konektivitas bluetooth', 350000, 'Elektronik', 'tersedia'),
-            ('Kemeja Flanel Pria', 'Kemeja katun lembut nyaman dipakai sehari-hari', 175000, 'Pakaian', 'habis')
+            ('Yamaha PAC112VM RM', 'Gitar listrik yamaha', 3520000, 'Gitar Listrik', 'habis'),
+            ('Gibson SG Tribute Vintage Cherry Satin Electric Guitar', 'Gitar listrik gibson original', 18300000, 'Gitar Listrik', 'tersedia'),
+            ('Vox AC15C1 15W 12 Custom Tube Guitar Amplifier', 'Ampli gitar vox original', 11000000, 'Amplifier', 'tersedia'),
+            ('Yamaha GA-15II Guitar Amplifier', 'Ampli gitar yamaha original', 1200000, 'Amplifier', 'habis'),
+            ('Gitar Akustik Yamaha FS-400', 'Gitar akustik yamaha original', 1400000, 'Gitar Listrik', 'tersedia'),
+            ('Yamaha BB-434M Electric Bass', 'Bass yamaha original', 4800000, 'Bass', 'habis')
         ");
     }
 
