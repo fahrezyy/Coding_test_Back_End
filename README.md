@@ -97,7 +97,7 @@ Untuk memverifikasi fungsionalitas dan logika aplikasi secara otomatis menggunak
 ### 2. Lihat Semua Produk (Disertai Search & Filter)
 * **URL:** `GET /api/products`
 * **Query Parameters (Opsional):**
-  * `search`: Kata kunci pencarian nama atau kategori (`?search=laptop`)
+  * `search`: Kata kunci pencarian nama atau kategori (`?search=yamaha`)
   * `status`: Filter berdasarkan ketersediaan (`?status=tersedia` atau `?status=habis`)
 
 ### 3. Tambah Produk Baru *(Membutuhkan Auth)*
@@ -106,11 +106,11 @@ Untuk memverifikasi fungsionalitas dan logika aplikasi secara otomatis menggunak
 * **Body (JSON):**
   ```json
   {
-      "name": "Mechanical Keyboard",
-      "description": "Keyboard RGB dengan switch blue",
-      "price": 650000,
-      "category": "Elektronik",
-      "status": "tersedia"
+    "name": "Fender Stratocaster Player Series",
+    "description": "Gitar elektrik fender original dengan pickguard modern",
+    "price": 12500000,
+    "category": "Gitar Listrik",
+    "status": "tersedia"
   }
   ```
 
